@@ -1,0 +1,4 @@
+- name: block cidr
+  action: block
+  expr: cidr(string(ip.dst), "10.128.0.0/16")
+  
