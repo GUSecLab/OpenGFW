@@ -1,0 +1,9 @@
+- name: horrible DNS hack to do logging
+  action: allow
+  log: true
+  expr: dns != nil && !dns.qr && any(dns.questions, {.name endsWith "log.message"})
+
+- name: block shadowsocks and vmess
+  action: block
+  log: true
+  expr: fet != nil && fet.yes
